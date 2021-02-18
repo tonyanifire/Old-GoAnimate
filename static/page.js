@@ -69,7 +69,7 @@ module.exports = function (req, res, url) {
                         case "/cc": {
 			title = "Character Creator";
 			attrs = {
-				data: process.env.SWF_URL + "/cc.swf", // data: 'cc.swf',
+				data: process.env.SWF_URL + "/cc1.swf", // data: 'cc.swf',
 				type: "application/x-shockwave-flash",
 				id: "char_creator",
 				width: "100%",
@@ -94,7 +94,7 @@ module.exports = function (req, res, url) {
 					tlang: "en_US",
 				},
 				allowScriptAccess: "always",
-				movie: process.env.SWF_URL + "/cc.swf", // 'http://localhost/cc.swf'
+				movie: process.env.SWF_URL + "/cc1.swf", // 'http://localhost/cc.swf'
 			};
 			break;
 		}
@@ -175,7 +175,7 @@ module.exports = function (req, res, url) {
 				`m-${fUtil[query.noAutosave ? 'getNextFileId' : 'fillNextFileId']('movie-', '.xml')}`;
 			title = 'Video Editor';
 			attrs = {
-				data: process.env.SWF_URL + '/go_full.swf',
+				data: process.env.SWF_URL + '/go_full1.swf',
 				type: 'application/x-shockwave-flash', width: '100%', height: '100%',
 			};
 			params = {
@@ -183,7 +183,7 @@ module.exports = function (req, res, url) {
 					'apiserver': '/', 'storePath': process.env.STORE_URL + '/<store>', 'isEmbed': 1, 'ctc': 'go',
 					'ut': 60, 'bs': 'default', 'appCode': 'go', 'page': '', 'siteId': 'go', 'lid': 13, 'isLogin': 'Y', 'retut': 1,
 					'clientThemePath': process.env.CLIENT_URL + '/<client_theme>', 'themeId': 'business', 'tlang': 'en_US',
-					'presaveId': presave, 'goteam_draft_only': 1, 'isWide': 1, 'nextUrl': '/pages/html/list.html',
+					'presaveId': presave, 'goteam_draft_only': 1, 'isWide': 1, 'nextUrl': '/html/list.html',
 				},
 				allowScriptAccess: 'always',
 			};
