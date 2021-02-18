@@ -65,7 +65,39 @@ module.exports = function (req, res, url) {
 			};
 			break;
 		}
-
+			
+                        case "/cc": {
+			title = "Character Creator";
+			attrs = {
+				data: process.env.SWF_URL + "/cc.swf", // data: 'cc.swf',
+				type: "application/x-shockwave-flash",
+				id: "char_creator",
+				width: "100%",
+				height: "100%",
+			};
+			params = {
+				flashvars: {
+					apiserver: "/",
+					storePath: process.env.STORE_URL + "/<store>",
+					clientThemePath: process.env.CLIENT_URL + "/<client_theme>",
+					original_asset_id: query["id"] || null,
+					themeId: "business",
+					ut: 60,
+					bs: "default",
+					appCode: "go",
+					page: "",
+					siteId: "go",
+					m_mode: "school",
+					isLogin: "Y",
+					isEmbed: 1,
+					ctc: "go",
+					tlang: "en_US",
+				},
+				allowScriptAccess: "always",
+				movie: process.env.SWF_URL + "/cc.swf", // 'http://localhost/cc.swf'
+			};
+			break;
+		}
 		case "/character/browser": {
 			title = "CC Browser";
 			attrs = {
